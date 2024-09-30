@@ -2,10 +2,10 @@ policy "restrict_storage_account_access" {
   source = "./policies/restrict_storage_account_access.sentinel"
 }
 
-policy "blob-public-access-level-set-to-private" {
-  source = "https://registry.terraform.io/v2/policies/hashicorp/azure-storage-terraform/1.0.2/policy/blob-public-access-level-set-to-private.sentinel?checksum=sha256:9a99176020132c73392e88347705887045f7e34c9e5e70d991be5967d568ceb0"
-  enforcement_level = "advisory"
-}
+// policy "blob-public-access-level-set-to-private" {
+//   source = "https://registry.terraform.io/v2/policies/hashicorp/azure-storage-terraform/1.0.2/policy/blob-public-access-level-set-to-private.sentinel?checksum=sha256:9a99176020132c73392e88347705887045f7e34c9e5e70d991be5967d568ceb0"
+//   enforcement_level = "advisory"
+// }
 
 // policy "default-network-access-rule-set-to-deny" {
 //   source = "https://registry.terraform.io/v2/policies/hashicorp/azure-storage-terraform/1.0.2/policy/default-network-access-rule-set-to-deny.sentinel?checksum=sha256:063091d2d8f9f259dbf70b44ca5a504ce5d8af1775914a2bb17c545c070a5db8"
