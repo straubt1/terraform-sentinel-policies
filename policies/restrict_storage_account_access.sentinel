@@ -1,0 +1,28 @@
+import "tfplan/v2" as tfplan
+
+allStorageAccounts = filter tfplan.resource_changes as _, resource_changes {
+	resource_changes.mode is "managed" and
+		resource_changes.type is "azurerm_storage_account" and
+		(resource_changes.change.actions contains "create" or
+			resource_changes.change.actions is ["update"])
+}
+
+sa_access_type_is_private = rule {
+	all allStorageAccounts as _, accounts {
+		accounts.change.after.public_network_access_enabled is false
+	}
+}
+
+// -------------------------------------------------------------
+// Name:        restrict_storage_account_access.sentinel
+// Category:    Data Management
+// Provider:    hashicorp/azurerm
+// Resource:    azurerm_storage_account
+// Check:       public_network_access_enabled is "false"
+// -------------------------------------------------------------
+// Ensure that 'Public access level' is set to Private for blob
+// containers.
+// -------------------------------------------------------------
+main = rule {
+	sa_access_type_is_private
+}
