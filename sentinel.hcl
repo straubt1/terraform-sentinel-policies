@@ -1,5 +1,6 @@
 policy "restrict_storage_account_access" {
   source = "./policies/restrict_storage_account_access.sentinel"
+  enforcement_level = "softmandatory"
 }
 
 
