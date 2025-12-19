@@ -1,5 +1,4 @@
-# This policy uses the Sentinel tfplan/v2 import to require that
-# all Azure VMs have vm sizes from an allowed list
+# Ensure that Azure VM Sizes are restricted to a specific set of allowed sizes.
 
 # Import functions
 import "tfplan-functions" as plan
