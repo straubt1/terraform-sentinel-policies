@@ -11,7 +11,7 @@ param allowed_sizes default [
   "Standard_A1",
   "Standard_A2",
   "Standard_D1_v2",
-  "Standard_D2_v2"
+  "Standard_D2_v2",
 ]
 
 # Get all Azure VMs using azurerm_virtual_machine
