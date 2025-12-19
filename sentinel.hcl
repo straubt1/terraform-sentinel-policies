@@ -1,5 +1,5 @@
 module "tfplan-functions" {
-    source = "./policies/functions/azure-functions.sentinel"
+    source = "./policies/functions/tfplan-functions.sentinel"
 }
 
 policy "restrict_storage_account_access" {
