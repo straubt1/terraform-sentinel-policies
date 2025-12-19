@@ -1,4 +1,5 @@
 # Ensure that 'Public access level' is set to Private for blob containers.
+
 import "tfplan/v2" as tfplan
 
 allStorageAccounts = filter tfplan.resource_changes as _, resource_changes {
